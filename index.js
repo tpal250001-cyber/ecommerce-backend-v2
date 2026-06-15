@@ -1,11 +1,13 @@
 const express = require("express")
-const index = require("./routes/index.js")
+const Authroutes = require("./routes/Authroutes.js")
+const Productroutes =  require("./routes/Productroutes.js") 
 const cors = require("cors")
-const app = exprees()
+const app = express()
 app.use(cors())
 app.use(express.json())
 
-app.use("api/auth/v1",index)
+app.use("/api/auth/v1",Authroutes)
+app.use("/api/auth/v2",Productroutes)
 //app.use("api/auth/v1",user )
 app.listen(3001)
                 
