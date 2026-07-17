@@ -1,7 +1,7 @@
-const JWT_SECRET = "Tushar Pal"
+const JWT_SECRET = process.env.JWT_SECRET
 const jwt = require("jsonwebtoken")
 const   { User }   = require("../models/db");
-const { length } = require("zod");
+//const { length } = require("zod");
 
 async function Middleware(req,res,next){
 
@@ -15,7 +15,7 @@ if(decodeddata){
    console.log(decodeddata.id)
 
   req.user = await User.findById(decodeddata.id)
-const userid = req.user;
+const userid = req.user._id;
 console.log(userid)
 console.log(req.user._id)
 next()

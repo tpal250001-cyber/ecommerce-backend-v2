@@ -7,3 +7,4 @@ c:"er"
 }
 
 tushar.a = "tushar"
+console.log(tushar)
