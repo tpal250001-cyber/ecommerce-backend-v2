@@ -1,7 +1,5 @@
 const mongoose = require("mongoose");
-const { type } = require("node:os");
-const { tr } = require("zod/locales");
-const { required } = require("zod/mini");
+
 const { Product } = require("./db1");
 //const { Product } = require("./db1");
 

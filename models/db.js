@@ -1,9 +1,8 @@
 const mongoose = require("mongoose")
-const { type } = require("os")
-const { object } = require("zod")
-const { required } = require("zod/mini")
+require("dotenv").config();
 
- mongoose.connect("mongodb+srv://tpal250001_db_user:tushar@cluster0.sfhfwki.mongodb.net/MY-APP")
+
+ mongoose.connect(process.env.Mongo_url)
 console.log("conened")
   const Schema = mongoose.Schema
 const ObjectId = mongoose.Types.ObjectId;
