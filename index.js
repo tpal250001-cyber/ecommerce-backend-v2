@@ -13,5 +13,5 @@ app.use("/api/auth/v2",Productroutes)
 app.use("/api/auth/v3",Orderoutes)
 app.use("/api/auth/v4",Cartroutes)
 //app.use("api/auth/v1",user )
-app.listen(3001)
+app.listen(process.env.PORT)
                 
