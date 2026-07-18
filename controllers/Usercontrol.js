@@ -2,7 +2,7 @@
 require("dotenv").config();
 const  { User } = require("../models/db")
 const jwt = require("jsonwebtoken")
-const JWT_SECRET = process.env.JWT_SECRET
+
 //const  sendEmail = require("../utils/sendemail");
 //const bcrypt = require("bcrypt") 
 const Middleware = require("../middleware/Authmiddleware");
@@ -59,7 +59,7 @@ const password = req.body.password;
    })
   console.log(name)
    if(user){
-    const token= jwt.sign({id :user._id},JWT_SECRET)
+    const token= jwt.sign({id :user._id},process.env.JWT_SECRET,{ expiresIn: "7d"});
      return res.json({
         token,
         userid:user._id

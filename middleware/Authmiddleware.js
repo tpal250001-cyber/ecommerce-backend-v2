@@ -1,5 +1,5 @@
 require("dotenv").config();
-const JWT_SECRET = process.env.JWT_SECRET
+//const JWT_SECRET = process.env.JWT_SECRET
 const jwt = require("jsonwebtoken")
 const   { User }   = require("../models/db");
 //const { length } = require("zod");
@@ -9,7 +9,7 @@ async function Middleware(req,res,next){
 
 const token  = req.headers.token;
 try{
-const decodeddata = jwt.verify(token,JWT_SECRET)
+const decodeddata = jwt.verify(token,process.env.JWT_SECRET)
 console.log(decodeddata)
 console.log(decodeddata.id)
 if(decodeddata){
