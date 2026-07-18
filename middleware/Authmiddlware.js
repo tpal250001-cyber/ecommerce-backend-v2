@@ -1,5 +1,5 @@
-const JWT_SECRET = ;
-const  =
+const JWT_SECRET = process.env.JWT_SECRET;
+
 
  function Middleware(req,res,next){
     
