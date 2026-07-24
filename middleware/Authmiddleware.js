@@ -8,6 +8,10 @@ async function Middleware(req,res,next){
 
 
 const token  = req.headers.token;
+if(!token || token === "null" || token === undefined){
+ 
+return res.status(404).json({message:"no token provided,invalid user"})
+}
 try{
 const decodeddata = jwt.verify(token,process.env.JWT_SECRET)
 console.log(decodeddata)

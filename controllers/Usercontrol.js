@@ -55,7 +55,8 @@ const password = req.body.password;
 
 
    const user = await User.findOne({
-    name:name
+    name:name,
+    password:password
    })
   console.log(name)
    if(user){

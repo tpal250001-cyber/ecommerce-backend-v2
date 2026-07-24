@@ -1,8 +1,30 @@
+const { optional } = require("zod");
 const { Product } = require("../models/db1");
+const { title } = require("process");
 //const  cloudinary = require('../config/cloudinary.js')
 
 async function Getproduct(req, res) {
-  const product = await Product.find();
+  const { search, category } = req.query;
+console.log(search,category)
+  let filter ={
+
+    
+  }
+  console.log(filter.name)
+
+  if(search){
+  
+  filter.name = { $regex:search}
+  }
+  if(category){
+
+    filter.category = category
+
+  }
+  console.log(filter)
+  
+
+  const product = await Product.find(filter);
 
   if (product) {
     res.json(
