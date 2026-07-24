@@ -22,7 +22,7 @@ const password = req.body.password;
    })
    if(existinguser){
     return res.json({
-        email:email,
+        email,
         message:"user already present with this email",
       
     })
