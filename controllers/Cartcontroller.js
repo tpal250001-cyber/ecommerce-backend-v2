@@ -48,12 +48,15 @@ async function Addtocart(req, res) {
 }
 async function Getcart(req, res) {
   const userid = req.params.userid;
+  
   const cart = await Cart.findOne({ Userid: userid }).populate("items.Productid","_id name price description category imageUrls",);
 
   res.json({
     message: cart,
   });
+
 }
+
 async function Updatequantity(req, res) {
   const userid = req.user._id;
   const actions = req.body.actions;
