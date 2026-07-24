@@ -1,6 +1,6 @@
-const { optional } = require("zod");
+
 const { Product } = require("../models/db1");
-const { title } = require("process");
+
 //const  cloudinary = require('../config/cloudinary.js')
 
 async function Getproduct(req, res) {
