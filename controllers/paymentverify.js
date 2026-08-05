@@ -19,12 +19,13 @@ console.log(razorpay_signature)
    console.log("updated")
     // Signature match ho gaya, ab DB me order update karo
    const updatedd =   await Order.findOneAndUpdate(
-      { orderid: Userid },
+      { orderid: razorpay_order_id },
       {
         Status: "delivered",
         paymentid: razorpay_payment_id,
          
-      }
+      },
+      {new:true}
     );
    
     return res.status(200).json({ message: "Payment verified successfully",updatedd });

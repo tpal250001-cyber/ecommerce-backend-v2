@@ -1,4 +1,5 @@
 const express = require("express")
+require("dotenv").config()
 const Authroutes = require("./routes/Authroutes.js")
 const Productroutes =  require("./routes/Productroutes.js") 
 const Orderoutes  = require("./routes/Orderroutes.js")

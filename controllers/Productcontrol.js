@@ -8,7 +8,7 @@ async function Getproduct(req, res) {
 console.log(search,category)
   let filter ={
 
-    
+  
   }
   console.log(filter.name)
 
@@ -25,6 +25,7 @@ console.log(search,category)
   
 
   const product = await Product.find(filter);
+  
 
   if (product) {
     res.json(
